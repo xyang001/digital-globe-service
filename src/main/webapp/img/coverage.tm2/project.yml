@@ -1,0 +1,27 @@
+_prefs: 
+  mapid: tristen.8182c767
+  saveCenter: true
+_properties: 
+  bridge: 
+    "group-by": layer
+attribution: ''
+bounds: 
+  - -180
+  - -85.0511
+  - 180
+  - 85.0511
+center: 
+  - 8.6133
+  - 5.7909
+  - 2
+description: ''
+format: "png8:m=h"
+interactivity_layer: ''
+layers: null
+maxzoom: 22
+minzoom: 0
+name: ''
+source: "mapbox:///tristen.vj2fyldi"
+styles: 
+  - style.mss
+template: ''

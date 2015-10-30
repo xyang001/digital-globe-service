@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<configuration>
+    
+
+    <!-- Log Levels: ERROR WARN INFO DEBUG TRACE -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">            
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger - %msg%n
+            </Pattern>            
+        </encoder>
+    </appender>
+    
+    <root level="TRACE">
+        <appender-ref ref="STDOUT" />
+    </root>
+    
+    <!--<logger name="org.activiti" level="WARN" />
+    <logger name="javax.persistence" level="WARN" />
+    <logger name="org.eclipse.jetty" level="WARN" />
+    <logger name="com.digitalglobe.iipfoundations.productservice.activiti" level="WARN" />
+    <logger name="org.springframework" level="WARN" />
+    <logger name="org.postgresql" level="WARN" />
+    <logger name="org.eclipse.persistence" level="WARN" />
+    <logger name="com.h2database" level="WARN" />-->
+    <logger name="org.activiti.engine" level="WARN" />
+    <logger name="org.apache.ibatis" level="WARN" />
+    <logger name="org.springframework" level="WARN" />
+    <logger name="org.apache" level="WARN" />
+
+</configuration>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" background-color="rgba(0, 0, 0, 0)">
+
+<Parameters>
+  <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+  <Parameter name="center">8.6133,5.7909,2</Parameter>
+  <Parameter name="format">png8:m=h</Parameter>
+  <Parameter name="maxzoom">22</Parameter>
+  <Parameter name="minzoom">0</Parameter>
+  <Parameter name="source"><![CDATA[mapbox:///tristen.vj2fyldi]]></Parameter>
+</Parameters>
+
+
+<Style name="ne_110m_admin_0_countries_lakes" filter-mode="first">
+  <Rule>
+    <Filter>([sovereignt] = 'El Salvador')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Chad')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Honduras')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Mexico')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Nicaragua')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Argentina')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Belize')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([geounit] = 'Australia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Bahrain')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'British Indian Ocean Territory')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'India')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Iran')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Iraq')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Israel')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Japan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Jordan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Kazakhstan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Kuwait')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Kyrgyzstan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Lebanon')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Maldives')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Mauritius')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'North Korea')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Oman')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Pakistan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Palestinian Territory')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Qatar')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Saudi Arabia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'South Korea')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Sri Lanka')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Syria')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Tajikistan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Turkmenistan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'United Arab Emirates')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Uzbekistan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Yemen')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([geounit] = 'Kenya')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Algeria')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Angola')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Benin')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Botswana')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Burkina Faso')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Burundi')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Cameroon')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Central African Republic')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Guatemala')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Comoros')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Congo')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Congo DRC')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Côte d’Ivoire')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Djibouti')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Egypt')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Equatorial Guinea')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Eritrea')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Ethiopia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Gabon')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Gambia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Ghana')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Guinea')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Guinea-Bissau')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Kenya')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Lesotho')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Liberia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Libya')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Madagascar')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Malawi')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Mali')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Mauritania')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Mayotte')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Morocco')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Mozambique')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Namibia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Niger')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Nigeria')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Reunion')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Rwanda')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Sao Tome and Principe')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Senegal')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Seychelles')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Sierra Leone')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Somalia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'South Africa')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'South Sudan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Sudan')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Swaziland')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Tanzania')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Togo')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Tunisia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Uganda')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Zambia')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <Filter>([sovereignt] = 'Zimbabwe')</Filter>
+    <PolygonPatternSymbolizer opacity="1" file="img/dot-pattern.png" alignment="global" />
+  </Rule>
+  <Rule>
+    <PolygonPatternSymbolizer file="img/dot-pattern.png" alignment="global" opacity="0.25" />
+  </Rule>
+</Style>
+<Layer name="ne_110m_admin_0_countries_lakes"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>ne_110m_admin_0_countries_lakes</StyleName>  </Layer>
+
+</Map>

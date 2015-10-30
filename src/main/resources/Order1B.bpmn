@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions id="Definition" 
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"                    
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" 
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:activiti="http://activiti.org/bpmn"
+             targetNamespace="http://www.jboss.org/drools"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+    
+    <process id="OneBProduct" isExecutable="true">
+        
+        <startEvent id="StartEvent">
+            <outgoing>SequenceFlow_1</outgoing>
+        </startEvent>
+        <sequenceFlow id="SequenceFlow_1" name="" sourceRef="StartEvent" targetRef="Order1B"/>
+        
+        <serviceTask id="Order1B" name="Order 1b" activiti:class="com.digitalglobe.iipfoundations.productservice.activiti.delegates.Order1BDelegate">
+            <incoming>SequenceFlow_1</incoming>
+            <outgoing>SequenceFlow_2</outgoing>
+        </serviceTask>
+        
+        <sequenceFlow id="SequenceFlow_2" name="" sourceRef="Order1B" targetRef="EndEvent"/>                
+
+        <endEvent id="EndEvent">
+            <incoming>SequenceFlow_2</incoming>
+        </endEvent>
+
+    </process>
+</definitions>

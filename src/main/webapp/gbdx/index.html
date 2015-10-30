@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Use correct character set. -->
+        <meta charset="utf-8">
+        <!-- Tell IE to use the latest, best version (or Chrome Frame if pre-IE11). -->
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <title>Hello World!</title>
+        <script src="../Cesium/Cesium.js"></script>
+        <script src="cesium-drawhelper-master/DrawHelper.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="dist/css/bootstrap-colorpicker.min.css">
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="dist/js/bootstrap-colorpicker.min.js"></script>
+
+        <style>
+            @import url(Cesium/Widgets/widgets.css);
+            @import url(cesium-drawhelper-master/Cesium/Widgets/CesiumWidget/CesiumWidget.css);
+            @import url(cesium-drawhelper-master/DrawHelper.css);
+
+            html, body, #cesiumContainer {
+                width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+            }
+
+            #cesiumContainer {
+                position: absolute;
+                top: 0px;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                overflow: hidden;
+                padding: 0;
+                font-family: sans-serif;
+            }
+            #toolbar {
+                position: absolute;
+                top: 0px;
+                left: 0;
+                display: inline;
+                margin: 10px;
+                padding: 0px;
+                background: white;
+            }
+            #logging {
+                position: absolute;
+                bottom: 0px;
+                right: 0;
+                display: inline;
+                margin: 10px;
+                padding: 10px;
+                background: white;
+            }
+
+            body {
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+
+
+        <!-- Dialog box styling: -->
+        <style>
+            body { font-size: 62.5%; }
+            label, input { display:block; }
+            input.text { margin-bottom:12px; width:95%; padding: .4em; }
+            fieldset { padding:0; border:0; margin-top:25px; }
+            h1 { font-size: 1.2em; margin: .6em 0; }
+            div#users-contain { width: 350px; margin: 20px 0; }
+            div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+            div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+            .ui-dialog .ui-state-error { padding: .3em; }
+            .validateTips { border: 1px solid transparent; padding: 0.3em; }
+        </style>
+
+
+
+    </head>
+    <body >
+        <div id="cesiumContainer"></div>
+        <div id="toolbar">
+        </div>
+        <div id="logging">
+        </div>
+
+        <div id="search-dialog" title="Set Search Filter">
+            <form>
+                <fieldset>
+                    <label for="sensors">Sensor Platforms</label>
+                    <select multiple name="sensors" id="sensors">
+                        <option value="QUICKBIRD02">QuickBird02</option>
+                        <option value="GEOEYE01">GeoEye01</option>
+                        <option value="WORLDVIEW01">WorldView01</option>
+                        <option value="WORLDVIEW02">WorldView02</option>
+                        <option value="WORLDVIEW03">WorldView03</option>
+                    </select>
+                    <label for="maxCloudCover">Maximum Cloud Cover</label>
+                    <input type="text" id="maxCloudCover" name="maxCloudCover" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                    <div id="maxcc-slider"/>
+                    <p>
+                        <label for="startDate">Start Date</label>
+                        <input type="text" id="startDate" name="startDate">
+                        <label for="endDate">End Date</label>
+                        <input type="text" id="endDate" name="endDate">
+                        <label for="availableOnly">Available Images Only</label>
+                        <input type="checkbox" id="availableOnly" name="availableOnly">
+                        Aggregation Type:
+                        <input type="radio" id="aggregator" name="aggregator" value="union" checked>Union
+                        <input type="radio" id="aggregator" name="aggregator" value="count">Count
+
+                        <input id="picker" type="text" name="picker" value="#FF0000">
+
+
+                </fieldset>
+            </form>
+        </div>
+
+
+        <script>
+            var viewer = new Cesium.Viewer('cesiumContainer');
+            var scene = viewer.scene;
+            var drawHelper = new DrawHelper(viewer);
+            var toolbar = drawHelper.addToolbar(document.getElementById("toolbar"), {
+                buttons: ['extent']
+            });
+
+
+
+
+            toolbar.addListener('extentCreated', function (event) {
+                var extent = event.extent;
+                loggingMessage('Extent created (N: ' + extent.north.toFixed(3) + ', E: ' + extent.east.toFixed(3) + ', S: ' + extent.south.toFixed(3) + ', W: ' + extent.west.toFixed(3) + ')');
+                // var extentPrimitive = new DrawHelper.ExtentPrimitive({
+                //     extent: extent,
+                //     material: Cesium.Material.fromType(Cesium.Material.StripeType)
+                // });
+                // scene.primitives.add(extentPrimitive);
+                // extentPrimitive.setEditable();
+                // extentPrimitive.addListener('onEdited', function(event) {
+                //     loggingMessage('Extent edited: extent is (N: ' + event.extent.north.toFixed(3) + ', E: ' + event.extent.east.toFixed(3) + ', S: ' + event.extent.south.toFixed(3) + ', W: ' + event.extent.west.toFixed(3) + ')');
+                // });
+
+                // Get form data to make our search
+                var available = $('#availableOnly').is(':checked');
+                var sensors = $('select#sensors').val();
+                var maxCloudCover = $("#maxCloudCover").val(  );
+                var startDate = $("#startDate").val(  );
+                var endDate = $("#endDate").val(  );
+                var color = $("#picker").val();
+                var aggregator = $('input:radio[name=aggregator]:checked').val();
+
+                var urls = ["http://catalogaggregator-env.elasticbeanstalk.com/v1/aggregate?aggregator=",
+                    "http://aggregator.geobigdata.io/v1/aggregate?aggregator=",
+                    "http://aggregator2.geobigdata.io/v1/aggregate?aggregator=",
+                    "http://aggregator3.geobigdata.io/v1/aggregate?aggregator=",
+                    "http://aggregator4.geobigdata.io/v1/aggregate?aggregator=",
+                    "http://aggregator5.geobigdata.io/v1/aggregate?aggregator="]
+
+                var caturl = urls[Math.floor(Math.random() * urls.length)]
+
+                sensorstring = "("
+                for (i = 0; i < sensors.length; i++) {
+                    sensors[i] = "sensorPlatformName = '" + sensors[i] + "'";
+                }
+
+                sensorstring = "(" + sensors.join(" or ") + ")";
+
+
+                var N = event.extent.north.toFixed(3) * 180 / 3.14159;
+                var S = event.extent.south.toFixed(3) * 180 / 3.14159;
+                var E = event.extent.east.toFixed(3) * 180 / 3.14159;
+                var W = event.extent.west.toFixed(3) * 180 / 3.14159;
+
+                // break into D degree chunks
+                D = 1.4;
+                Ys = [];
+                for (i = S; i < N; i = i + D) {
+                    Ys.push(i);
+                }
+                Ys.push(N);
+
+                Xs = []
+                for (i = W; i < E; i = i + D) {
+                    Xs.push(i);
+                }
+                Xs.push(E);
+
+                //console.log(Xs);
+                //console.log(Ys);
+
+                for (i = 0; i < Xs.length - 1; i++) {
+                    w = Xs[i];
+                    e = Xs[i + 1] - .0001;
+
+                    for (j = 0; j < Ys.length - 1; j++) {
+                        s = Ys[j];
+                        n = Ys[j + 1] - .0001;
+
+                        // viewer.entities.add({
+                        //     name : 'test',
+                        //     polygon : {
+                        //       hierarchy : Cesium.Cartesian3.fromDegreesArray([
+                        //                                 w,n,
+                        //                                 e,n,
+                        //                                 e,s,
+                        //                                 w,s]),
+                        //       material : Cesium.Color.RED.withAlpha(0.5),
+                        //       outline : true,
+                        //       outlineColor : Cesium.Color.BLACK
+                        //     }
+                        //   });
+
+                        polygonwkt = "POLYGON ((" + w + " " + n + ", " + e + " " + n + ", " + e + " " + s + ", " + w + " " + s + ", " + w + " " + n + "))";
+                        //console.log(polygonwkt) ;
+
+                        postdata = {
+                            "searchAreaWkt": polygonwkt,
+                            "startDate": startDate,
+                            "endDate": endDate,
+                            "filters": [
+                                "cloudCover < " + maxCloudCover,
+                                sensorstring
+                            ],
+                            "tagResults": false,
+                            "types": [
+                                "DigitalGlobeAcquisition"
+                            ]
+                        };
+
+                        if (available) {
+                            postdata.filters.push("available = true");
+                        }
+
+                        $.ajax({
+                            type: "POST",
+                            url: caturl + aggregator,
+                            data: JSON.stringify(postdata),
+                            headers: {"Content-Type": "application/json", "Authorization": "Bearer X7jJnsxBq5IPg5Fxtqp9fTjRFPRdi9"},
+                            cache: false,
+                            success: function (superpoly) {
+
+                                var promise = Cesium.GeoJsonDataSource.load(superpoly, {
+                                    stroke: Cesium.Color.fromCssColorString(color).withAlpha(0.5),
+                                    fill: Cesium.Color.fromCssColorString(color).withAlpha(0.5),
+                                    strokeWidth: 0,
+                                    markerSymbol: '?'
+                                });
+
+                                promise.then(function (dataSource) {
+                                    viewer.dataSources.add(dataSource);
+                                    if (aggregator == "count") {
+                                        var entities = dataSource.entities.values;
+                                        for (var i = 0; i < entities.length; i++) {
+                                            var entity = entities[i];
+                                            entity.polygon.extrudedHeight = entity.properties.count * 2000;
+                                            //console.log(entity.properties.count);
+                                        }
+                                    }
+                                });
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                }
+
+
+
+
+
+                // viewer.dataSources.add(Cesium.GeoJsonDataSource.load(asdf, {
+                //   stroke: Cesium.Color.RED.withAlpha(0.5),
+                //   fill: Cesium.Color.RED.withAlpha(0.5),
+                //   strokeWidth: 0,
+                //   markerSymbol: '?'
+                // }));
+            });
+
+
+
+
+            var logging = document.getElementById('logging');
+            function loggingMessage(message) {
+                logging.innerHTML = message;
+            }
+
+
+            dialog = $("#search-dialog").dialog({
+                autoOpen: false,
+                height: 400,
+                width: 180,
+                modal: false,
+                position: {my: "left top", at: "left bottom"}
+            });
+
+            dialog.dialog("open");
+
+            $(function () {
+                $("#maxcc-slider").slider({
+                    range: "min",
+                    value: 15,
+                    min: 0,
+                    max: 100,
+                    slide: function (event, ui) {
+                        $("#maxCloudCover").val(ui.value);
+                    }
+                });
+                $("#maxCloudCover").val($("#maxcc-slider").slider("value"));
+            });
+            $(function () {
+                $("#startDate").datepicker({dateFormat: "yy-mm-dd"});
+                $("#endDate").datepicker({dateFormat: "yy-mm-dd"});
+            });
+
+            $(function () {
+                $('#picker').colorpicker();
+            });
+        </script>
+
+
+
+
+    </body>
+</html>

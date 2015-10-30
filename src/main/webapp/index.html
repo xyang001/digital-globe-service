@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>DigitalGlobe IIP Foundations Products API</title>
+        <meta name='robots' content='index'/>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+       
+        <meta property='og:description' content='' />
+        <meta property='og:type' content='website' />
+        <link rel='shortcut icon' href='img/Atlas_Icon.png' type='image/x-icon' />
+        <script src='http://app-ab08.marketo.com/js/forms2/js/forms2.min.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+        <link href='base.css' rel='stylesheet' />
+        <link href='site.css' rel='stylesheet' />
+
+        <script src='https://api.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+        <script src='http://d3js.org/d3.v2.min.js'></script>
+        <script src='http://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+
+        <!-- Import datasets -->
+        <script>
+            window.importData = {};
+        </script>
+        <script src="js/coverage-data.js"></script>
+        <script src="js/geojson-data.js"></script>
+    <body>
+
+        <!-- INTRODUCTION -->
+        <section class='fill-white'>
+
+            <!-- <div class='col12 clearfix text-right'>
+              <div class='limiter'>
+                <nav class='pad2 space'>
+                  <a class='strong quiet pad1 round' href='#'>Sign up</a>
+                  <a class='strong quiet pad1 round' href='#'>Pricing</a>
+                  <a class='strong quiet pad1 round' href='http://developer.digitalglobe.com/docs/maps-api/'>Developer docs</a>
+                  <a class='strong quiet pad1 round' href='#'>Sign in</a>
+                </nav>
+              </div>
+            </div> -->
+
+            <div class='limiter'>
+                <div class='pad-top2 space-bottom4'>
+                    <div class='col12'>
+                        <h1>DigitalGlobe IIP Foundations Products API</h1>
+                        <h2 class='space-bottom1'>Information and Insight Products</h2>
+                    </div>
+                    <div class='col12 clearfix'>
+                        <div class='col8 space-bottom2 prose-big'>
+                            <p>DigitalGlobe IIP Foundations Products API delivers and easy to use interface
+                                for ordering complex information and insight products.</p>
+                            <!-- a href='https://mapbox.com/about/' class='sprite s-mapbox-powered'></a>
+                            <p>With open Mapbox infrastructure and APIs, the <a href='#api'>DigitalGlobe Maps API</a> makes it easy to build scalable applications with the best imagery everywhere in the world.</p-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='space-bottom4 clearfix'>
+                <div class='col12 clearfix mobile-cols space-bottom4'>
+                    <div class='col6 contain pad4xr basemap-intro'>
+                        <a href='#acomp' class='fill-dark dark pad2 block round pin-topright top80 z1 pad4xr'>
+                            <div class='pin-topright pad1'>
+                                <span class='dot inline fill-green'>
+                                    <span class='icon i-arrow-down'></span>
+                                </span>
+                            </div>
+                            <h4>DigitalGlobe Atmospheric Compensation</h4>
+                            <p class='quiet'>DigitalGlobe level 1b imagery with Atmospheric Compensation Applied</p>
+                        </a>
+
+                        <div class='col12 device round-topright'>
+                            <div class='map dark' id='map-one'></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- acomp -->
+        <section class='contain'>
+            <div class='limiter'>
+                <div class='col12 clearfix pad-top4'>
+                    <div class='col5 space-bottom4 overlay-container pad4 contain z1'>
+                        <div class='space-bottom2'>
+                            <h2>DigitalGlobe Atmospheric Compensation</h2>
+                            <h3>DigitalGlobe level 1b imagery with Atmospheric Compensation Applied</h3>
+                            <p class='quiet'>
+                                Atmospheric effects such as haze have been removed.
+                            </p>
+                        </div>
+                        <div class='col12 space-bottom1 feature contain'>
+                            <div class='square60 pin-topleft icon i-coverage'></div>
+                            <div class='space-left7 pad0y'>
+                                <h4>Planet-wide coverage</h4>
+                                <p class='quiet'>High-Resolution imagery for nearly everywhere on Earth.</p>
+                            </div>
+                        </div>
+                        <div class='col12 space-bottom1 feature contain'>
+                            <div class='square60 pin-topleft icon i-frequency'></div>
+                            <div class='space-left7 pad0y'>
+                                <h4>High frequency updates</h4>
+                                <p class='quiet'>The most recent imagery from DigitalGlobe's satellite constellation</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <footer id='contact' class='pad4y fill-white'>
+            <div class='col12 limiter clearfix'>
+                <div class='space-bottom2 pad-top4'>
+                    <!--<h2 class='space-bottom1'>Contact us to join the Alpha program</h2>-->
+                </div>
+            </div>
+
+            <div class='col12 limiter clearfix'>
+                <div class='col8 margin4r'>
+                    <form id='mktoForm_1509'></form>
+                    <!--<script>
+            MktoForms2.loadForm('http://app-ab08.marketo.com', '918-HBW-945', 1509);
+                    </script>-->
+                </div>
+            </div>
+        </footer>
+
+        <script src='index.js'></script>
+    </body>
+</html>

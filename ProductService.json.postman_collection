@@ -1,0 +1,56 @@
+{
+	"id": "9df8f6e8-b325-5bd3-57f3-55ad3688b602",
+	"name": "ProductService",
+	"description": "",
+	"order": [
+		"f5de596e-c4e8-244a-09f8-228c22e6ec55",
+		"ea7b86d2-9abe-96bb-10ec-f6e058e7a12d"
+	],
+	"folders": [],
+	"timestamp": 1439495098141,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "ea7b86d2-9abe-96bb-10ec-f6e058e7a12d",
+			"headers": "Authorization: Bearer {{Token}}\n",
+			"url": "https://geobigdata.io/catalog/v1/record/105041001281F200",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1439495373939,
+			"name": "GBDx Catalog Query",
+			"description": "",
+			"collectionId": "9df8f6e8-b325-5bd3-57f3-55ad3688b602",
+			"responses": []
+		},
+		{
+			"id": "f5de596e-c4e8-244a-09f8-228c22e6ec55",
+			"headers": "Authorization: Basic anRoaWVsOm5XZHA3M0FncnN6Qg==\n",
+			"url": "localhost:8585/iip/products/acomp",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "9df8f6e8-b325-5bd3-57f3-55ad3688b602",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Product Service AComp",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1439495110905,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<iipfoundations>\n    <product>acomp</product>\n    <catid>105041001281F200</catid>\n</iipfoundations>"
+		}
+	]
+}
